@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ramir\\Documents\\Rosy\\Prueba Técnica DS\\gestionDeContactos\\gestionDeContactos.csproj": {}
+    "C:\\Users\\ramir\\Documents\\Rosy\\Prueba Técnica DS\\GestorDeContactos\\gestionDeContactos\\gestionDeContactos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ramir\\Documents\\Rosy\\Prueba Técnica DS\\gestionDeContactos\\gestionDeContactos.csproj": {
+    "C:\\Users\\ramir\\Documents\\Rosy\\Prueba Técnica DS\\GestorDeContactos\\gestionDeContactos\\gestionDeContactos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ramir\\Documents\\Rosy\\Prueba Técnica DS\\gestionDeContactos\\gestionDeContactos.csproj",
+        "projectUniqueName": "C:\\Users\\ramir\\Documents\\Rosy\\Prueba Técnica DS\\GestorDeContactos\\gestionDeContactos\\gestionDeContactos.csproj",
         "projectName": "gestionDeContactos",
-        "projectPath": "C:\\Users\\ramir\\Documents\\Rosy\\Prueba Técnica DS\\gestionDeContactos\\gestionDeContactos.csproj",
+        "projectPath": "C:\\Users\\ramir\\Documents\\Rosy\\Prueba Técnica DS\\GestorDeContactos\\gestionDeContactos\\gestionDeContactos.csproj",
         "packagesPath": "C:\\Users\\ramir\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ramir\\Documents\\Rosy\\Prueba Técnica DS\\gestionDeContactos\\obj\\",
+        "outputPath": "C:\\Users\\ramir\\Documents\\Rosy\\Prueba Técnica DS\\GestorDeContactos\\gestionDeContactos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ramir\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,6 +44,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[9.0.0-preview.5.24306.7, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

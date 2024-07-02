@@ -1,0 +1,83 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "gestionDeContactos/1.0.0": {
+        "dependencies": {
+          "System.Text.Json": "9.0.0-preview.5.24306.7"
+        },
+        "runtime": {
+          "gestionDeContactos.dll": {}
+        }
+      },
+      "System.IO.Pipelines/9.0.0-preview.5.24306.7": {
+        "runtime": {
+          "lib/net8.0/System.IO.Pipelines.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.30607"
+          }
+        }
+      },
+      "System.Text.Encodings.Web/9.0.0-preview.5.24306.7": {
+        "runtime": {
+          "lib/net8.0/System.Text.Encodings.Web.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.30607"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll": {
+            "rid": "browser",
+            "assetType": "runtime",
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.30607"
+          }
+        }
+      },
+      "System.Text.Json/9.0.0-preview.5.24306.7": {
+        "dependencies": {
+          "System.IO.Pipelines": "9.0.0-preview.5.24306.7",
+          "System.Text.Encodings.Web": "9.0.0-preview.5.24306.7"
+        },
+        "runtime": {
+          "lib/net8.0/System.Text.Json.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.30607"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "gestionDeContactos/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.IO.Pipelines/9.0.0-preview.5.24306.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zZs8KCITvX7F/hrkI1M+jajptlTTH4UKQLVOLYQWIe8PHtJarFJHINRdyKvx52DdeThjeiF9CvmX7FkTXF5DdQ==",
+      "path": "system.io.pipelines/9.0.0-preview.5.24306.7",
+      "hashPath": "system.io.pipelines.9.0.0-preview.5.24306.7.nupkg.sha512"
+    },
+    "System.Text.Encodings.Web/9.0.0-preview.5.24306.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-so8FgvDDNzOfyeZ2f3wOIa9ZR4KEu/2Uaqw8C1hsHBC3Vo2vZCg12DlnGFD0jufbNS/WoJBkLPpM1gonrJr2Kg==",
+      "path": "system.text.encodings.web/9.0.0-preview.5.24306.7",
+      "hashPath": "system.text.encodings.web.9.0.0-preview.5.24306.7.nupkg.sha512"
+    },
+    "System.Text.Json/9.0.0-preview.5.24306.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-t2VlMCSAqqZRbEGviNdnmT6Y7yJ1PrgI+T0pqAm9kwije6qdvrIZIb0ZsShq8nMbItPUPgZMpwDjIQQszaus9g==",
+      "path": "system.text.json/9.0.0-preview.5.24306.7",
+      "hashPath": "system.text.json.9.0.0-preview.5.24306.7.nupkg.sha512"
+    }
+  }
+}

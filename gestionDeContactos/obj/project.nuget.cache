@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "f0sKsFhUlXJsU9NNrRANIonfxJAA2Pp/azBCJnXfWlDi/gz7OnsPjp3ozv4H3ZvBPlFtyxbuglrXy5CTwptbPA==",
+  "dgSpecHash": "BWFMszkGB6M=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ramir\\Documents\\Rosy\\Prueba Técnica DS\\gestionDeContactos\\gestionDeContactos.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\ramir\\Documents\\Rosy\\Prueba Técnica DS\\GestorDeContactos\\gestionDeContactos\\gestionDeContactos.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ramir\\.nuget\\packages\\system.io.pipelines\\9.0.0-preview.5.24306.7\\system.io.pipelines.9.0.0-preview.5.24306.7.nupkg.sha512",
+    "C:\\Users\\ramir\\.nuget\\packages\\system.text.encodings.web\\9.0.0-preview.5.24306.7\\system.text.encodings.web.9.0.0-preview.5.24306.7.nupkg.sha512",
+    "C:\\Users\\ramir\\.nuget\\packages\\system.text.json\\9.0.0-preview.5.24306.7\\system.text.json.9.0.0-preview.5.24306.7.nupkg.sha512"
+  ],
   "logs": []
 }
