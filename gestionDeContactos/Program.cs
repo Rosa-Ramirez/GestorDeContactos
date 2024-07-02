@@ -1,15 +1,12 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using gestionDeContactos;
 
-
-Console.WriteLine("Hello, World!");
-
 GestorDeContactos gestor = new GestorDeContactos();
 string archivo = "contactos.txt";
 
 while(true)
 {
-    Console.WriteLine("Menú de Contactos");
+    Console.WriteLine("\nMenú de Contactos");
     Console.WriteLine("1. Agregar contacto");
     Console.WriteLine("2. Buscar contacto");
     Console.WriteLine("3. Listar contacto");

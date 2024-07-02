@@ -7,7 +7,7 @@ public class GestorDeContactos
 
     public void AgregarContacto()
     {
-        Console.WriteLine("Ingrese los datos del contacto (separados por coma. Ej.: 7894, Luis, +50246962876, luis@gmail.com");
+        Console.WriteLine("\nIngrese los datos del contacto (separados por coma. Ej.: 7894, Luis, +50246962876, luis@gmail.com");
         string datos = Console.ReadLine();
         string[] partes = datos.Split(',');
         try
@@ -21,17 +21,17 @@ public class GestorDeContactos
                 Email = partes[2]
             };
             contactos.Add(contacto);
-            Console.WriteLine("Contacto agregado correctamente.");
+            Console.WriteLine("\nContacto agregado correctamente.");
         }
         catch (FormatException)
         {
-            Console.WriteLine("Error: Asegúrse de que el formato de los datos sea el correcto.");
+            Console.WriteLine("\nError: Asegúrse de que el formato de los datos sea el correcto.");
         }
     }
 
     public void BuscarContacto()
     {
-        Console.WriteLine("Ingrese el id del contacto que busca:");
+        Console.WriteLine("\nIngrese el id del contacto que busca:");
         int id = Convert.ToInt32(Console.ReadLine());
 
         Contacto contacto = contactos.FirstOrDefault(c => Convert.ToInt32((c.Id)) == id);
@@ -41,7 +41,7 @@ public class GestorDeContactos
         }
         else
         {
-            Console.WriteLine("Contacto no encontrado");
+            Console.WriteLine("\nContacto no encontrado");
         }
     }
     public void ListarContactos()
@@ -49,25 +49,25 @@ public class GestorDeContactos
         int count = 1;
         foreach (var contacto in contactos)
         {
-            Console.WriteLine($"{count} Contacto:");
+            Console.WriteLine($"\n{count} Contacto:");
             count++;
             Console.WriteLine(contacto);
         }
     }
     public void EliminarContacto()
     {
-        Console.WriteLine("Ingrese el id del contacto que desea eliminar:");
+        Console.WriteLine("\nIngrese el id del contacto que desea eliminar:");
         string id = Console.ReadLine();
 
         Contacto contacto = contactos.FirstOrDefault(c => Convert.ToString(c.Id) == id);
         if (contacto != null)
         {
             contactos.Remove(contacto);
-            Console.WriteLine("Contacto eliminado");
+            Console.WriteLine("\nContacto eliminado");
         }
         else
         {
-            Console.WriteLine("Contacto no encontrado");
+            Console.WriteLine("\nContacto no encontrado");
         }
     }
 
@@ -110,12 +110,12 @@ public class GestorDeContactos
                             }
                             catch (FormatException)
                             {
-                                Console.WriteLine($"Error en: {linea}");
+                                Console.WriteLine($"\nError en: {linea}");
                             }
                         }
                         else
                         {
-                            Console.WriteLine($"Error: Debe ingresar un total de 3 datos");
+                            Console.WriteLine($"\nError: Debe ingresar un total de 3 datos");
                         }
                     }
                 }
@@ -123,12 +123,12 @@ public class GestorDeContactos
             }
             else
             {
-                Console.WriteLine($"El archivo '{archivo}' no existe.");
+                Console.WriteLine($"\nEl archivo '{archivo}' no existe.");
             }
         }
         catch (IOException e)
         {
-            Console.WriteLine($"Error: {e.Message}");
+            Console.WriteLine($"\nError: {e.Message}");
         }
     }
 }
