@@ -2,6 +2,7 @@
 
 public class GestorDeContactos
 {
+    int id = 0;
     List<Contacto> contactos = new List<Contacto>();
 
     public void AgregarContacto()
@@ -11,12 +12,13 @@ public class GestorDeContactos
         string[] partes = datos.Split(',');
         try
         {
+            id++;
             Contacto contacto = new Contacto
             {
-                Id = int.Parse(partes[0]),
-                Nombre = partes[1],
-                Telefono = partes[2],
-                Email = partes[3]
+                Id = id,
+                Nombre = partes[0],
+                Telefono = partes[1],
+                Email = partes[2]
             };
             contactos.Add(contacto);
             Console.WriteLine("Contacto agregado correctamente.");
@@ -71,7 +73,7 @@ public class GestorDeContactos
 
     public void GuardarContactos(string archivo)
     {
-        StreamWriter writer = new StreamWriter(archivo);
+        using (StreamWriter writer = new StreamWriter(archivo))
         {
             foreach (var contacto in contactos)
             {
@@ -82,24 +84,51 @@ public class GestorDeContactos
 
     public void CargarContactos(string archivo)
     {
-        if (File.Exists(archivo))
+        try
         {
-            StreamReader reader = new StreamReader(archivo);
+            if (File.Exists(archivo))
             {
-                string linea;
-                while ((linea = reader.ReadLine()) != null)
+                using (StreamReader reader = new StreamReader(archivo))
                 {
-                    string[] partes = linea.Split(',');
-                    Contacto contacto = new Contacto
+                    string linea;
+                    while ((linea = reader.ReadLine()) != null)
                     {
-                        Id = int.Parse(partes[0]),
-                        Nombre = partes[1],
-                        Telefono = partes[2],
-                        Email = partes[3]
-                    };
-                    contactos.Add(contacto);
+                        string[] partes = linea.Split(',');
+                        if (partes.Length == 3)
+                        {
+                            try
+                            {
+                                id++;
+                                Contacto contacto = new Contacto
+                                {
+                                    Id = id,
+                                    Nombre = partes[0],
+                                    Telefono = partes[1],
+                                    Email = partes[2]
+                                };
+                                contactos.Add(contacto);
+                            }
+                            catch (FormatException)
+                            {
+                                Console.WriteLine($"Error en: {linea}");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Error: Debe ingresar un total de 3 datos");
+                        }
+                    }
                 }
+
             }
+            else
+            {
+                Console.WriteLine($"El archivo '{archivo}' no existe.");
+            }
+        }
+        catch (IOException e)
+        {
+            Console.WriteLine($"Error: {e.Message}");
         }
     }
 }
