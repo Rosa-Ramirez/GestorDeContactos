@@ -64,12 +64,11 @@ static void BuscarContacto(GestorDeContactos gestor)
 
     if (contacto != null)
     {
-        Console.WriteLine("\nContacto encontrado");
         Console.WriteLine(contacto);
     }
     else
     {
-        Console.WriteLine("\nContacto no encontrado");
+        return;
     }
 }
 

@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\ramir\\Documents\\Rosy\\Prueba T\u00E9cnica DS\\GestorDeContactos\\gestionDeContactos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{14BAF135-6AC2-4FFF-AE54-5BF7668B410D}|gestionDeContactos.csproj|C:\\Users\\ramir\\Documents\\Rosy\\Prueba T\u00E9cnica DS\\GestorDeContactos\\gestionDeContactos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14BAF135-6AC2-4FFF-AE54-5BF7668B410D}|gestionDeContactos.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{14BAF135-6AC2-4FFF-AE54-5BF7668B410D}|gestionDeContactos.csproj|C:\\Users\\ramir\\Documents\\Rosy\\Prueba T\u00E9cnica DS\\GestorDeContactos\\gestionDeContactos\\gestordecontactos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14BAF135-6AC2-4FFF-AE54-5BF7668B410D}|gestionDeContactos.csproj|solutionrelative:gestordecontactos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{14BAF135-6AC2-4FFF-AE54-5BF7668B410D}|gestionDeContactos.csproj|c:\\users\\ramir\\documents\\rosy\\prueba t\u00E9cnica ds\\gestordecontactos\\gestiondecontactos\\gestordecontactos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14BAF135-6AC2-4FFF-AE54-5BF7668B410D}|gestionDeContactos.csproj|solutionrelative:gestordecontactos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{14BAF135-6AC2-4FFF-AE54-5BF7668B410D}|gestionDeContactos.csproj|c:\\users\\ramir\\documents\\rosy\\prueba t\u00E9cnica ds\\gestordecontactos\\gestiondecontactos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14BAF135-6AC2-4FFF-AE54-5BF7668B410D}|gestionDeContactos.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{14BAF135-6AC2-4FFF-AE54-5BF7668B410D}|gestionDeContactos.csproj|C:\\Users\\ramir\\Documents\\Rosy\\Prueba T\u00E9cnica DS\\GestorDeContactos\\gestionDeContactos\\contacto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,26 +34,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\ramir\\Documents\\Rosy\\Prueba T\u00E9cnica DS\\GestorDeContactos\\gestionDeContactos\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\ramir\\Documents\\Rosy\\Prueba T\u00E9cnica DS\\GestorDeContactos\\gestionDeContactos\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAzAAAA",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAQwE4AAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-02T19:00:16.127Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "GestorDeContactos.cs",
               "DocumentMoniker": "C:\\Users\\ramir\\Documents\\Rosy\\Prueba T\u00E9cnica DS\\GestorDeContactos\\gestionDeContactos\\GestorDeContactos.cs",
               "RelativeDocumentMoniker": "GestorDeContactos.cs",
               "ToolTip": "C:\\Users\\ramir\\Documents\\Rosy\\Prueba T\u00E9cnica DS\\GestorDeContactos\\gestionDeContactos\\GestorDeContactos.cs",
               "RelativeToolTip": "GestorDeContactos.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAH0AAAAFAAAA",
+              "ViewState": "AQIAACoAAAAAAAAAAAAowDoAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-02T18:37:07.597Z",
               "EditorCaption": ""
