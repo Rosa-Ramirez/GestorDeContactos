@@ -7,12 +7,20 @@ public class GestorDeContactos
 
     public void AgregarContacto()
     {
+        string archivo = "contactos.txt";
         Console.WriteLine("\nIngrese los datos del contacto (separados por coma. Ej.: 7894, Luis, +50246962876, luis@gmail.com");
         string datos = Console.ReadLine();
         string[] partes = datos.Split(',');
         try
         {
             id++;
+            for (int i = 0; i < contactos.Count; i++)
+            {
+                if (contactos[i].Id == id)
+                {
+                    id++;
+                }
+            }
             Contacto contacto = new Contacto
             {
                 Id = id,
@@ -77,7 +85,7 @@ public class GestorDeContactos
         {
             foreach (var contacto in contactos)
             {
-                writer.WriteLine($"{contacto.Id}, {contacto.Nombre}, {contacto.Telefono}, {contacto.Email}");
+                writer.WriteLine($"{contacto.Nombre}, {contacto.Telefono}, {contacto.Email}");
             }
         }
     }
@@ -98,7 +106,13 @@ public class GestorDeContactos
                         {
                             try
                             {
-                                id++;
+                                for (int i = 0; i < contactos.Count; i++)
+                                {
+                                    if (contactos[i].Id == id)
+                                    {
+                                        id++;
+                                    }
+                                }
                                 Contacto contacto = new Contacto
                                 {
                                     Id = id,
