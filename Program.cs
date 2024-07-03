@@ -12,33 +12,42 @@ while (true)
     Console.WriteLine("5. Guardar contactos");
     Console.WriteLine("6. Cargar contactos");
     Console.WriteLine("7. Salir");
-    int option = Convert.ToInt32(Console.ReadLine());
 
-    switch (option)
+    string input = Console.ReadLine();
+
+
+    if (int.TryParse(input, out int option))
     {
-        case 1:
-            AddContact(manager);
-            break;
-        case 2:
-            SearchContact(manager);
-            break;
-        case 3:
-            ListContact(manager);
-            break;
-        case 4:
-            DeleteContact(manager);
-            break;
-        case 5:
-            manager.SaveContact();
-            break;
-        case 6:
-            manager.UploadContact();
-            break;
-        case 7:
-            return;
-        default:
-            Console.WriteLine("Opción no válida");
-            break;
+        switch (option)
+        {
+            case 1:
+                AddContact(manager);
+                break;
+            case 2:
+                SearchContact(manager);
+                break;
+            case 3:
+                ListContact(manager);
+                break;
+            case 4:
+                DeleteContact(manager);
+                break;
+            case 5:
+                manager.SaveContact();
+                break;
+            case 6:
+                manager.UploadContact();
+                break;
+            case 7:
+                return;
+            default:
+                Console.WriteLine("Opción no válida");
+                break;
+        }
+    }
+    else
+    {
+        Console.WriteLine("Opción no válida");
     }
 }
 
