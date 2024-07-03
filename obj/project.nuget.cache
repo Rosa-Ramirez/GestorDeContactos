@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "elqD9/fDaek=",
+  "dgSpecHash": "TYfx3SYb+Gp+DRw3pssCg/qrnvHGdQVrz7IEuxNtDNRQyLJE1MqUHmbWB+uC+r2qhO1zAnisyHE4RynZ/kaswg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ramir\\Documents\\Rosy\\Prueba Técnica DS\\GestorDeContactos\\gestionDeContactos\\gestionDeContactos.csproj",
+  "projectFilePath": "C:\\Users\\ramir\\Documents\\Rosy\\Prueba Técnica DS\\GestorDeContactos\\gestionDeContactos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ramir\\.nuget\\packages\\microsoft.data.sqlite.core\\8.0.6\\microsoft.data.sqlite.core.8.0.6.nupkg.sha512",
     "C:\\Users\\ramir\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.8\\sqlitepclraw.bundle_e_sqlite3.2.1.8.nupkg.sha512",
