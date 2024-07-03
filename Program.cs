@@ -33,10 +33,10 @@ while (true)
                 DeleteContact(manager);
                 break;
             case 5:
-                Console.WriteLine("Los contactos ya se han guardado en la base de datos.");
+                manager.SaveContacts();
                 break;
             case 6:
-                Console.WriteLine("Los contactos ya se han cargado de la base de datos.");
+                manager.LoadContacts();
                 break;
             case 7:
                 return;

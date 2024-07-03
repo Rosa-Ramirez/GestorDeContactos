@@ -90,3 +90,4 @@ C:\Users\ramir\Documents\Rosy\Prueba Técnica DS\GestorDeContactos\obj\Debug\net
 C:\Users\ramir\Documents\Rosy\Prueba Técnica DS\GestorDeContactos\obj\Debug\net8.0\gestionDeContactos.pdb
 C:\Users\ramir\Documents\Rosy\Prueba Técnica DS\GestorDeContactos\obj\Debug\net8.0\gestionDeContactos.genruntimeconfig.cache
 C:\Users\ramir\Documents\Rosy\Prueba Técnica DS\GestorDeContactos\obj\Debug\net8.0\ref\gestionDeContactos.dll
+C:\Users\ramir\Documents\Rosy\Prueba Técnica DS\GestorDeContactos\bin\Debug\net8.0\Newtonsoft.Json.dll
