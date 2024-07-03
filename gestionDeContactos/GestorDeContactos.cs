@@ -1,148 +1,134 @@
-﻿namespace gestionDeContactos;
+﻿using Microsoft.Data.Sqlite;
+namespace gestionDeContactos;
 
 public class GestorDeContactos
 {
+    private string connectionString = "Data Source=contactos.db";
+
+    public GestorDeContactos()
+    {
+        SQLitePCL.Batteries.Init();
+        using (var connection = new SqliteConnection(connectionString))
+        {
+            connection.Open();
+            string table = "CREATE TABLE IF NOT EXISTS contactos (Id INTEGER PRIMARY KEY AUTOINCREMENT, Nombre TEXT NOT NULL, Telefono TEXT NOT NULL, Email TEXT NOT NULL)";
+            var command = new SqliteCommand(table, connection);
+            command.ExecuteNonQuery();
+        }
+    }
     int id = 0;
     List<Contacto> contactos = new List<Contacto>();
 
-    public void AgregarContacto()
+    public void AgregarContacto(Contacto contacto)
     {
-        string archivo = "contactos.txt";
-        Console.WriteLine("\nIngrese los datos del contacto (separados por coma. Ej.: 7894, Luis, +50246962876, luis@gmail.com");
-        string datos = Console.ReadLine();
-        string[] partes = datos.Split(',');
         try
         {
-            id++;
-            for (int i = 0; i < contactos.Count; i++)
+            using (var connection = new SqliteConnection(connectionString))
             {
-                if (contactos[i].Id == id)
-                {
-                    id++;
-                }
+                connection.Open();
+                string sqlAdd = "INSERT INTO contactos (Nombre, Telefono, Email) VALUES (@Nombre, @Telefono, @Email)";
+                var command = new SqliteCommand(sqlAdd, connection);
+                command.Parameters.AddWithValue("@Nombre", contacto.Nombre);
+                command.Parameters.AddWithValue("@Telefono", contacto.Telefono);
+                command.Parameters.AddWithValue("@Email", contacto.Email);
+                command.ExecuteNonQuery();
+                Console.WriteLine("\nContacto agregado correctamente.");
             }
-            Contacto contacto = new Contacto
-            {
-                Id = id,
-                Nombre = partes[0],
-                Telefono = partes[1],
-                Email = partes[2]
-            };
-            contactos.Add(contacto);
-            Console.WriteLine("\nContacto agregado correctamente.");
         }
         catch (FormatException)
         {
-            Console.WriteLine("\nError: Asegúrse de que el formato de los datos sea el correcto.");
+            Console.WriteLine("\nError: Asegúrese de que el formato de los datos sea el correcto.");
         }
     }
 
-    public void BuscarContacto()
+    public Contacto BuscarContacto(string criterio)
     {
-        Console.WriteLine("\nIngrese el id del contacto que busca:");
-        int id = Convert.ToInt32(Console.ReadLine());
-
-        Contacto contacto = contactos.FirstOrDefault(c => Convert.ToInt32((c.Id)) == id);
-        if (contacto != null)
+        using (var connection = new SqliteConnection(connectionString))
         {
-            Console.WriteLine(contacto);
-        }
-        else
-        {
-            Console.WriteLine("\nContacto no encontrado");
-        }
-    }
-    public void ListarContactos()
-    {
-        int count = 1;
-        foreach (var contacto in contactos)
-        {
-            Console.WriteLine($"\n{count} Contacto:");
-            count++;
-            Console.WriteLine(contacto);
-        }
-    }
-    public void EliminarContacto()
-    {
-        Console.WriteLine("\nIngrese el id del contacto que desea eliminar:");
-        string id = Console.ReadLine();
-
-        Contacto contacto = contactos.FirstOrDefault(c => Convert.ToString(c.Id) == id);
-        if (contacto != null)
-        {
-            contactos.Remove(contacto);
-            Console.WriteLine("\nContacto eliminado");
-        }
-        else
-        {
-            Console.WriteLine("\nContacto no encontrado");
-        }
-    }
-
-    public void GuardarContactos(string archivo)
-    {
-        using (StreamWriter writer = new StreamWriter(archivo))
-        {
-            foreach (var contacto in contactos)
+            connection.Open();
+            string sqlSearch = "SELECT * FROM contactos WHERE Nombre LIKE @Criterio OR Telefono LIKE @Criterio";
+            var command = new SqliteCommand(sqlSearch, connection);
+            command.Parameters.AddWithValue("@Criterio", $"%{criterio}%");
+            using (var reader = command.ExecuteReader())
             {
-                writer.WriteLine($"{contacto.Nombre}, {contacto.Telefono}, {contacto.Email}");
+                if (reader.Read())
+                {
+                    return new Contacto
+                    {
+                        Id = reader.GetInt32(0),
+                        Nombre = reader.GetString(1),
+                        Telefono = reader.GetString(2),
+                        Email = reader.GetString(3)
+                    };
+                }
+                else
+                {
+                    Console.WriteLine("\n Contacto no encontrado.");
+                    return null;
+                }
             }
         }
     }
-
-    public void CargarContactos(string archivo)
+    public List<Contacto> ListarContactos()
     {
+        List<Contacto> contactos = new List<Contacto>();
         try
         {
-            if (File.Exists(archivo))
+            using (var connection = new SqliteConnection(connectionString))
             {
-                using (StreamReader reader = new StreamReader(archivo))
+                connection.Open();
+                string sqlList = "SELECT * FROM contactos";
+                var command = new SqliteCommand(sqlList, connection);
+                using (var reader = command.ExecuteReader())
                 {
-                    string linea;
-                    while ((linea = reader.ReadLine()) != null)
+                    while (reader.Read())
                     {
-                        string[] partes = linea.Split(',');
-                        if (partes.Length == 3)
+                        Console.WriteLine("\n");
+                        Console.WriteLine(new Contacto
                         {
-                            try
-                            {
-                                for (int i = 0; i < contactos.Count; i++)
-                                {
-                                    if (contactos[i].Id == id)
-                                    {
-                                        id++;
-                                    }
-                                }
-                                Contacto contacto = new Contacto
-                                {
-                                    Id = id,
-                                    Nombre = partes[0],
-                                    Telefono = partes[1],
-                                    Email = partes[2]
-                                };
-                                contactos.Add(contacto);
-                            }
-                            catch (FormatException)
-                            {
-                                Console.WriteLine($"\nError en: {linea}");
-                            }
-                        }
-                        else
-                        {
-                            Console.WriteLine($"\nError: Debe ingresar un total de 3 datos");
-                        }
+                            Id = reader.GetInt32(0),
+                            Nombre = reader.GetString(1),
+                            Telefono = reader.GetString(2),
+                            Email = reader.GetString(3)
+                        });
                     }
                 }
-
+            }
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("No hay contactos registrados en la base de datos.");
+        }
+        return contactos;
+    }
+    public void EliminarContacto(int id)
+    {
+        using (var connection = new SqliteConnection(connectionString))
+        {
+            connection.Open();
+            string sqlDelete = "DELETE FROM contactos WHERE Id = @Id";
+            var command = new SqliteCommand(sqlDelete, connection);
+            command.Parameters.AddWithValue("@Id", id);
+            int result = command.ExecuteNonQuery();
+            if (result > 0)
+            {
+                Console.WriteLine("\nContacto eliminado");
             }
             else
             {
-                Console.WriteLine($"\nEl archivo '{archivo}' no existe.");
+                Console.WriteLine("\nContacto no encontrado");
+
             }
         }
-        catch (IOException e)
-        {
-            Console.WriteLine($"\nError: {e.Message}");
-        }
+    }
+
+    public void GuardarContactos()
+    {
+        Console.WriteLine("Los contactos ya se han guardado en la base de datos.");
+    }
+
+    public void CargarContactos()
+    {
+        Console.WriteLine("Los contactos ya se han cargado de la base de datos.");
     }
 }

@@ -1,10 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-using gestionDeContactos;
+﻿using gestionDeContactos;
 
 GestorDeContactos gestor = new GestorDeContactos();
-string archivo = "contactos.txt";
 
-while(true)
+while (true)
 {
     Console.WriteLine("\nMenú de Contactos");
     Console.WriteLine("1. Agregar contacto");
@@ -16,27 +14,77 @@ while(true)
     Console.WriteLine("7. Salir");
     int opcion = Convert.ToInt32(Console.ReadLine());
 
-    switch(opcion)
+    switch (opcion)
     {
         case 1:
-            gestor.AgregarContacto();
+            AgregarContacto(gestor);
             break;
         case 2:
-            gestor.BuscarContacto();
+            BuscarContacto(gestor);
             break;
         case 3:
-            gestor.ListarContactos();
+            ListarContactos(gestor);
             break;
         case 4:
-            gestor.EliminarContacto();
+            EliminarContacto(gestor);
             break;
         case 5:
-            gestor.GuardarContactos(archivo);
+            gestor.GuardarContactos();
             break;
         case 6:
-            gestor.CargarContactos(archivo);
+            gestor.CargarContactos();
             break;
         case 7:
             return;
+        default:
+            Console.WriteLine("Opción no válida");
+            break;
     }
+}
+
+static void AgregarContacto(GestorDeContactos gestor)
+{
+    Contacto contacto = new Contacto();
+
+    Console.WriteLine("\nIngrese el nombre del contacto:");
+    contacto.Nombre = Console.ReadLine();
+    Console.WriteLine("\nIngrese el teléfono del contacto:");
+    contacto.Telefono = Console.ReadLine();
+    Console.WriteLine("\nIngrese el email del contacto:");
+    contacto.Email = Console.ReadLine();
+
+    gestor.AgregarContacto(contacto);
+}
+
+static void BuscarContacto(GestorDeContactos gestor)
+{
+    Console.WriteLine("\nIngrese el nombre o teléfono del contacto que desea buscar:");
+    string busqueda = Console.ReadLine();
+    Contacto contacto = gestor.BuscarContacto(busqueda);
+
+    if (contacto != null)
+    {
+        Console.WriteLine("\nContacto encontrado");
+        Console.WriteLine(contacto);
+    }
+    else
+    {
+        Console.WriteLine("\nContacto no encontrado");
+    }
+}
+
+static void ListarContactos(GestorDeContactos gestor)
+{
+    var contactos = gestor.ListarContactos();
+    foreach (var contacto in contactos)
+    {
+        Console.WriteLine(contacto);
+    }
+}
+
+static void EliminarContacto(GestorDeContactos gestor)
+{
+    Console.WriteLine("Ingrese el id del contacto que desea eliminar:");
+    int id = Convert.ToInt32(Console.ReadLine());
+    gestor.EliminarContacto(id);
 }

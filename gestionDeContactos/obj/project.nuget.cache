@@ -1,10 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "BWFMszkGB6M=",
+  "dgSpecHash": "elqD9/fDaek=",
   "success": true,
   "projectFilePath": "C:\\Users\\ramir\\Documents\\Rosy\\Prueba Técnica DS\\GestorDeContactos\\gestionDeContactos\\gestionDeContactos.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ramir\\.nuget\\packages\\microsoft.data.sqlite.core\\8.0.6\\microsoft.data.sqlite.core.8.0.6.nupkg.sha512",
+    "C:\\Users\\ramir\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.8\\sqlitepclraw.bundle_e_sqlite3.2.1.8.nupkg.sha512",
+    "C:\\Users\\ramir\\.nuget\\packages\\sqlitepclraw.core\\2.1.8\\sqlitepclraw.core.2.1.8.nupkg.sha512",
+    "C:\\Users\\ramir\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.8\\sqlitepclraw.lib.e_sqlite3.2.1.8.nupkg.sha512",
+    "C:\\Users\\ramir\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.1.8\\sqlitepclraw.provider.e_sqlite3.2.1.8.nupkg.sha512",
     "C:\\Users\\ramir\\.nuget\\packages\\system.io.pipelines\\9.0.0-preview.5.24306.7\\system.io.pipelines.9.0.0-preview.5.24306.7.nupkg.sha512",
+    "C:\\Users\\ramir\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Users\\ramir\\.nuget\\packages\\system.text.encodings.web\\9.0.0-preview.5.24306.7\\system.text.encodings.web.9.0.0-preview.5.24306.7.nupkg.sha512",
     "C:\\Users\\ramir\\.nuget\\packages\\system.text.json\\9.0.0-preview.5.24306.7\\system.text.json.9.0.0-preview.5.24306.7.nupkg.sha512"
   ],
