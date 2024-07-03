@@ -111,14 +111,6 @@ public class ContactManager
             Console.WriteLine("\nContacto no encontrado");
         }
     }
-    public void SaveContact()
-    {
-        Console.WriteLine("Los contactos ya se han guardado en la base de datos.");
-    }
-    public void UploadContact()
-    {
-        Console.WriteLine("Los contactos ya se han cargado de la base de datos.");
-    }
     public bool CheckPhone(string phone)
     {
         using var connection = new SqliteConnection(connectionString);
