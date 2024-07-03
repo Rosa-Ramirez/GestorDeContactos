@@ -69,28 +69,21 @@ public class ContactManager
     public List<Contact> ListContact()
     {
         List<Contact> contacts = new List<Contact>();
-        try
+        using var connection = new SqliteConnection(connectionString);
+        connection.Open();
+        string sqlList = "SELECT * FROM contactos";
+        var command = new SqliteCommand(sqlList, connection);
+        using var reader = command.ExecuteReader();
+        while (reader.Read())
         {
-            using var connection = new SqliteConnection(connectionString);
-            connection.Open();
-            string sqlList = "SELECT * FROM contactos";
-            var command = new SqliteCommand(sqlList, connection);
-            using var reader = command.ExecuteReader();
-            while (reader.Read())
+            Console.WriteLine("\n");
+            Console.WriteLine(new Contact
             {
-                Console.WriteLine("\n");
-                Console.WriteLine(new Contact
-                {
-                    Id = reader.GetInt32(0),
-                    Name = reader.GetString(1),
-                    Phone = reader.GetString(2),
-                    Email = reader.GetString(3)
-                });
-            }
-        }
-        catch (FormatException)
-        {
-            Console.WriteLine("No hay contactos registrados en la base de datos.");
+                Id = reader.GetInt32(0),
+                Name = reader.GetString(1),
+                Phone = reader.GetString(2),
+                Email = reader.GetString(3)
+            });
         }
         return contacts;
     }
