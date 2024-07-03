@@ -20,22 +20,22 @@ while (true)
     {
         switch (option)
         {
-            case 1:
+            case (int) MenuOptions.AddContact:
                 AddContact(manager);
                 break;
-            case 2:
+            case (int) MenuOptions.SearchContact:
                 SearchContact(manager);
                 break;
-            case 3:
+            case (int) MenuOptions.ListContact:
                 ListContact(manager);
                 break;
-            case 4:
+            case (int) MenuOptions.DeleteContact:
                 DeleteContact(manager);
                 break;
-            case 5:
+            case (int) MenuOptions.SaveContacts:
                 manager.SaveContacts();
                 break;
-            case 6:
+            case (int) MenuOptions.LoadContacts:
                 manager.LoadContacts();
                 break;
             case 7:
@@ -87,6 +87,7 @@ static void ListContact(ContactManager manager)
     foreach (var contact in contacts)
     {
         Console.WriteLine(contact);
+        Console.WriteLine("\n");
     }
 }
 
@@ -95,4 +96,13 @@ static void DeleteContact(ContactManager manager)
     Console.WriteLine("Ingrese el id del contacto que desea eliminar:");
     int id = Convert.ToInt32(Console.ReadLine());
     manager.DeleteContact(id);
+}
+
+enum MenuOptions {
+    AddContact = 1,
+    SearchContact = 2,
+    ListContact = 3,
+    DeleteContact = 4,
+    SaveContacts = 5,
+    LoadContacts = 6
 }

@@ -12,8 +12,6 @@ public class ContactManager
 
     public void AddContact(Contact contact)
     {
-        string datos = Console.ReadLine();
-        string[] partes = datos.Split(',');
         try
         {
             id++;
@@ -24,6 +22,7 @@ public class ContactManager
                     id++;
                 }
             }
+            contact.Id = id; 
             contacts.Add(contact);
             Console.WriteLine("\nContact agregado correctamente.");
         }
@@ -86,7 +85,11 @@ public class ContactManager
             if (File.Exists(contactsFile))
             {
                 contacts = JsonConvert.DeserializeObject<List<Contact>>(File.ReadAllText(contactsFile));
-
+                if(contacts != null) {
+                    Console.WriteLine("Se cargaron los contactos correctamente");
+                } else {
+                    Console.WriteLine("No hay contactos para cargar");
+                }
             }
             else
             {
